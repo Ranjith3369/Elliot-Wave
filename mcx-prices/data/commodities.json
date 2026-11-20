@@ -1,0 +1,67 @@
+{
+  "exchange": "MCX",
+  "updated": "2026-11-20",
+  "source": "TradingView (MCX near-month futures), copied by hand for learning",
+  "commodities": [
+    {
+      "name": "Gold",
+      "symbol": "GOLD",
+      "unit": "per 10 grams",
+      "price": 122620,
+      "change": -4832,
+      "changePercent": -3.79,
+      "high": 123629,
+      "low": 121424
+    },
+    {
+      "name": "Silver",
+      "symbol": "SILVER",
+      "unit": "per kg",
+      "price": 149716,
+      "change": -7766,
+      "changePercent": -4.93,
+      "high": 151183,
+      "low": 146868
+    },
+    {
+      "name": "Crude Oil",
+      "symbol": "CRUDEOIL",
+      "unit": "per barrel",
+      "price": 7869,
+      "change": 175,
+      "changePercent": 2.27,
+      "high": 7933,
+      "low": 7711
+    },
+    {
+      "name": "Natural Gas",
+      "symbol": "NATURALGAS",
+      "unit": "per mmBtu",
+      "price": 296.4,
+      "change": -12.1,
+      "changePercent": -3.92,
+      "high": 304.1,
+      "low": 295.5
+    },
+    {
+      "name": "Copper",
+      "symbol": "COPPER",
+      "unit": "per kg",
+      "price": 1154.85,
+      "change": -38.75,
+      "changePercent": -3.25,
+      "high": 1180,
+      "low": 1141.45
+    },
+    {
+      "name": "Zinc",
+      "symbol": "ZINC",
+      "unit": "per kg",
+      "price": 388.15,
+      "change": -6.4,
+      "changePercent": -1.62,
+      "high": 393,
+      "low": 385
+    }
+  ]
+}

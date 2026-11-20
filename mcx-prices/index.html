@@ -1,0 +1,31 @@
+<!doctype html>
+<!--
+  🏠 index.html = THE DINING ROOM
+  This is the "skeleton" of the page: the walls, the tables, the menu board.
+  It holds no prices itself. The empty <div id="board"> is an empty table
+  that app.js (the waiter) will fill with food from commodities.json.
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MCX Price Board</title>
+  <!-- Link to the decorations (colours, fonts, layout) -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>MCX Price Board</h1>
+    <p id="updated">Loading…</p>
+  </header>
+
+  <!-- The "search box": type a commodity name to filter the cards -->
+  <input id="search" type="text" placeholder="Type a commodity, e.g. gold">
+
+  <!-- The empty table. The waiter (app.js) puts the cards here. -->
+  <main id="board"></main>
+
+  <!-- Bring in the waiter -->
+  <script src="app.js"></script>
+</body>
+</html>
