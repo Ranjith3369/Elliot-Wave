@@ -11,6 +11,8 @@ It's built to show how the pieces of a software product fit together.
 | `index.html` | 🏠 Dining room | The skeleton of the page: heading, search box, empty table |
 | `app.js` | 🧑‍🍳 Waiter | Fetches the JSON and turns it into cards on the page |
 | `style.css` | 🎨 Decorator | Colours, sizes, layout |
+| `kitchen/fetch_prices.py` | 🍳 Kitchen (the cook) | Phones the supplier for live prices, checks them, refills the JSON |
+| `../.github/workflows/update-mcx-prices.yml` | ⏰ Robot's alarm clock | Tells GitHub to run the cook every 30 min while MCX is open |
 
 ```
 You open the page (index.html)
@@ -37,8 +39,23 @@ python3 -m http.server 8000
 
 Then open http://localhost:8000
 
+## How live prices work
+
+```
+⏰ Every 30 min (Mon–Fri, 9 AM – 11:30 PM IST) GitHub wakes a robot
+   → the robot runs the cook (kitchen/fetch_prices.py)
+      → the cook phones the supplier (TradingView) and gets JSON back
+         → the quality inspector throws out numbers that don't make sense
+            → the cook writes a fresh data/commodities.json and saves it
+               → next time you open the page, the waiter serves the new prices
+```
+
+To cook on demand: GitHub → **Actions** tab → **Update MCX prices** → **Run workflow**.
+
+The supplier address is an unofficial free TradingView endpoint: fine for
+learning, but not guaranteed. The timer only runs once this is on the `main` branch.
+
 ## Next steps
 
-1. Replace the hand-copied JSON with a **live data API** (a real kitchen).
-2. Add a small **backend** that updates the prices automatically.
-3. Add Elliott Wave labels to each commodity.
+1. Put the page online with **GitHub Pages**.
+2. Add Elliott Wave labels to each commodity.

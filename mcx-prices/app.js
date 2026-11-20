@@ -10,8 +10,8 @@ const updated = document.getElementById("updated");
 let allCommodities = []; // the waiter's notepad: remembers what came from the pantry
 
 // Step 2 – Walk to the pantry and fetch the lunchbox (the JSON file).
-// Later, we will swap this address for a real live-data API (a real kitchen).
-fetch("data/commodities.json")
+// The kitchen (kitchen/fetch_prices.py) refills this lunchbox automatically.
+fetch("data/commodities.json", { cache: "no-store" }) // no-store = always get the freshest lunchbox
   .then((response) => response.json()) // open the lunchbox
   .then((data) => {
     allCommodities = data.commodities;

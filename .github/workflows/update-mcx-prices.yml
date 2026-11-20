@@ -1,0 +1,49 @@
+# ⏰ THE ROBOT'S ALARM CLOCK
+# GitHub reads this file and wakes up a free computer to run the cook
+# (mcx-prices/kitchen/fetch_prices.py), then saves the new lunchbox.
+
+name: Update MCX prices
+
+on:
+  # Every 30 minutes, Monday to Friday, while MCX is open
+  # (MCX: 9:00 AM – 11:30 PM India time = 03:30 – 18:00 in UTC, the clock GitHub uses).
+  # Note: GitHub only follows this alarm for the main branch, and it can run a few minutes late.
+  schedule:
+    - cron: "*/30 3-18 * * 1-5"
+  # A "Run workflow" button on GitHub's Actions tab, to cook on demand.
+  workflow_dispatch:
+  # Also cook whenever the recipe itself is changed.
+  push:
+    paths:
+      - "mcx-prices/kitchen/**"
+      - ".github/workflows/update-mcx-prices.yml"
+
+permissions:
+  contents: write # allowed to save the new lunchbox into the project
+
+jobs:
+  cook:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Open the project
+        uses: actions/checkout@v4
+
+      - name: Set up Python (the cook's language)
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Cook - fetch fresh MCX prices
+        run: python mcx-prices/kitchen/fetch_prices.py
+
+      - name: Save the new lunchbox (only if prices changed)
+        run: |
+          git config user.name "mcx-price-robot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add mcx-prices/data/commodities.json
+          if git diff --cached --quiet; then
+            echo "Prices unchanged, nothing to save."
+          else
+            git commit -m "Update MCX prices"
+            git push
+          fi
