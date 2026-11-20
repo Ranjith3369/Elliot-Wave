@@ -1,26 +1,26 @@
 {
   "exchange": "MCX",
-  "updated": "2026-11-20",
-  "source": "TradingView (MCX near-month futures), copied by hand for learning",
+  "updated": "20 Nov 2026, 06:23 PM IST",
+  "source": "TradingView (MCX near-month futures), fetched automatically",
   "commodities": [
     {
       "name": "Gold",
       "symbol": "GOLD",
       "unit": "per 10 grams",
-      "price": 122620,
-      "change": -4832,
-      "changePercent": -3.79,
-      "high": 123629,
+      "price": 122750,
+      "change": -4702,
+      "changePercent": -3.69,
+      "high": 123975,
       "low": 121424
     },
     {
       "name": "Silver",
       "symbol": "SILVER",
       "unit": "per kg",
-      "price": 149716,
-      "change": -7766,
-      "changePercent": -4.93,
-      "high": 151183,
+      "price": 150272,
+      "change": -7210,
+      "changePercent": -4.58,
+      "high": 153100,
       "low": 146868
     },
     {
@@ -37,19 +37,19 @@
       "name": "Natural Gas",
       "symbol": "NATURALGAS",
       "unit": "per mmBtu",
-      "price": 296.4,
-      "change": -12.1,
-      "changePercent": -3.92,
+      "price": 297.5,
+      "change": -11,
+      "changePercent": -3.57,
       "high": 304.1,
-      "low": 295.5
+      "low": 292.2
     },
     {
       "name": "Copper",
       "symbol": "COPPER",
       "unit": "per kg",
-      "price": 1154.85,
-      "change": -38.75,
-      "changePercent": -3.25,
+      "price": 1159.15,
+      "change": -34.45,
+      "changePercent": -2.89,
       "high": 1180,
       "low": 1141.45
     },
@@ -57,9 +57,9 @@
       "name": "Zinc",
       "symbol": "ZINC",
       "unit": "per kg",
-      "price": 388.15,
-      "change": -6.4,
-      "changePercent": -1.62,
+      "price": 388.85,
+      "change": -5.7,
+      "changePercent": -1.44,
       "high": 393,
       "low": 385
     }
